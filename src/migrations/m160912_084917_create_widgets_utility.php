@@ -45,4 +45,12 @@ class m160912_084917_create_widgets_utility extends AmosMigrationWidgets
             ]
         ];
     }
+
+
+    /**
+     * @return array
+     */
+    private function  initGraphicWidgetsConf(){
+        return [];
+    }
 }
