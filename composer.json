@@ -8,6 +8,7 @@
     "require": {
         "php": ">=5.4.0",
         "open20/amos-core":"~1.7",
+        "ad7six/dsn":"*",
         "egorspk/yii2-loganalyzer":"*"
     },
     "autoload": {
