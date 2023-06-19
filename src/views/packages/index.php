@@ -33,6 +33,10 @@ $this->registerJs($script, $this::POS_READY);
         This is a system report with the current packages in use and all dependencies
     </p>
 
+    <p class="lead">
+        Check also <a href="/utility/packages/requirements">System Requirements</a>
+    </p>
+
     <?=
     GridView::widget([
         'dataProvider' => new ArrayDataProvider([
