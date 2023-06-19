@@ -1,14 +1,16 @@
 <?php
 
 /**@var $this \yii\web\View */
+
 /**@var $content string */
 
-use open20\amos\core\helpers\Html;
-use yii\widgets\Breadcrumbs;
 use open20\amos\utility\assets\SiPackagesAsset;
-use yii\data\BaseDataProvider;
+use open20\amos\utility\Module;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
+
+$this->title = Module::t('amosutility', 'Packages');
+$this->params['breadcrumbs'][] = $this->title;
 
 $lockArray = json_decode($composerLock, true);
 
@@ -25,6 +27,7 @@ JS;
 
 SiPackagesAsset::register($this);
 $this->registerJs($script, $this::POS_READY);
+
 ?>
 <div class="container">
     <h1>Platform Packages Info</h1>
@@ -33,12 +36,16 @@ $this->registerJs($script, $this::POS_READY);
         This is a system report with the current packages in use and all dependencies
     </p>
 
+    <p class="lead">
+        Check also <a href="/utility/packages/requirements">System Requirements</a>
+    </p>
+
     <?=
     GridView::widget([
         'dataProvider' => new ArrayDataProvider([
             'allModels' => $lockArray['packages'],
             'sort' => [
-                'attributes' => [ 'name', 'version', 'description'],
+                'attributes' => ['name', 'version', 'description'],
             ],
             'pagination' => [
                 'pageSize' => 1000,

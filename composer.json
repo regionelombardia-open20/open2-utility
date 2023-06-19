@@ -1,5 +1,5 @@
 {
-    "name": "open20/open2-amos-utility",
+    "name": "open20/amos-utility",
     "description": "Sistema AMOS per le utility",
     "keywords": ["amos", "yii2", "utility"],
     "homepage": "http://git.open20.it/amos/amos-utility",
@@ -7,7 +7,11 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "open20/amos-core":"~1.7"
+        "open20/amos-core":"^1.15.0",
+        "ad7six/dsn":"*",
+        "egorspk/yii2-loganalyzer":"*",
+        "rossmann-it/yii2-cron": "~1.1.7",
+        "mult1mate/cron-manager": "*"
     },
     "autoload": {
         "psr-4": {
